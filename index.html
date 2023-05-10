@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang = "uk">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Форма </title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<form action="#">
+  <p><i>Будь-ласка, заповніть форму. Обов`язкові поля позначено - </i><em>*</em></p>
+  <fieldset>
+    <legend>Контакна інформація</legend>
+      <label for="name">Ім`я <em>*</em></label>
+      <input id="name"><br>
+      <label for="telephone">Телефон</label>
+      <input id="telephone"><br>
+      <label for="email">Email <em>*</em></label>
+      <input id="email"><br>
+  </fieldset>
+  <fieldset>
+    <legend>Персональна інформація</legend>
+      <label for="age">Вік<em>*</em></label>
+      <input id="age"><br>
+      <label for="gender">Стать</label>
+      <select id="gender">
+        <option value="male">Чоловіча</option>
+        <option value="female">Жіноча</option>
+      </select><br>
+      <label for="comments">Місце для додаткових коментарів</label>
+      <textarea id="comments"></textarea>
+  </fieldset>
+
+  <fieldset>
+    <legend>Оберіть ваших улюблених тварин</legend>
+    <label for="zebra"><input id="zebra" type="checkbox"> Зебра</label>
+    <label for="cat"><input id="cat" type="checkbox"> Кіт</label>
+    <label for="anaconda"><input id="anaconda" type="checkbox"> Анаконда</label>
+    <label for="elephant"><input id="elephant" type="checkbox"> Слон</label>
+    <label for="wildebeest"><input id="wildebeest" type="checkbox"> Антилопа</label>
+    <label for="crab"><input id="crab" type="checkbox"> Краб</label>
+  </fieldset>
+  <p><input class="btn5" type="submit" value="Відправити">
+  <input class="btn5" type="reset" value="Очистити"></p>
+</form>
+
+<p>Обчислення периметру та площі трикутника</p>
+<form>
+  <label for="side1">Сторна 1</label>
+  <input type="number" name="side1" id="side1" required><br><br>
+
+  <label for="side2">Сторна 2</label>
+  <input type="number" name="side2" id="side2" required><br><br>
+
+  <label for="side3">Сторна 3</label>
+  <input type="number" name="side3" id="side3" required><br><br>
+
+  <button class="btns" type="button" onclick="calculate()">Обчислити</button><br><br>
+
+  <label for="perimeter">Периметр трикутника</label>
+  <input type="number" name="perimeter" id="perimeter" readonly><br><br>
+
+  <label for="arrea">Площа трикутника</label>
+  <input type="number" name="arrea" id="area" readonly>
+ </form>
+
+ <script type="text/javascript">
+ 	function calculate() {
+ 		let a = parseFloat(document.getElementById("side1").value);
+ 		let b = parseFloat(document.getElementById("side2").value);
+ 		let c = parseFloat(document.getElementById("side3").value);
+
+ 		let perimeter = a + b + c;
+
+ 		let s = perimeter / 2;
+
+ 		let area = Math.sqrt(s * (s-a) * (s-b) * (s-c));
+
+ 		document.getElementById("perimeter").value = perimeter;
+ 		document.getElementById("area").value = area;
+ 	}
+ </script>
+</body>
+</html>
